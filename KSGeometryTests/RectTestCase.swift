@@ -6,6 +6,12 @@ class RectTestCase: XCTestCase {
     let testOrigin = Point(x: -1, y: -2)
     let testSize = Size(width: 2, height: 4)
     
+    func test_initialise() {
+        let sut = Rect(x: testOrigin.x, y: testOrigin.y, width: testSize.width, height: testSize.height)
+        XCTAssertEqual(sut.origin, testOrigin)
+        XCTAssertEqual(sut.size, testSize)
+    }
+    
     func test_initialise_with_origin_width_height() {
         let sut = Rect(origin: testOrigin, width: testSize.width, height: testSize.height)
         XCTAssertTrue(sut.origin.isCoincidentWith(testOrigin))

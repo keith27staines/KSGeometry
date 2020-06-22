@@ -4,7 +4,7 @@ import KSGeometry
 
 class PointTestCase: XCTestCase {
 
-    func test_initialise_with_coorindates() {
+    func test_initialise_with_coordinates() {
         let sut = Point(x:1,y:2)
         XCTAssertEqual(sut.x, 1)
         XCTAssertEqual(sut.y, 2)
