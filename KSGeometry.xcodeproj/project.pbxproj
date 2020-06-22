@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		534D29A224A0853900B8D86B /* KSGeometry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 534D299824A0853900B8D86B /* KSGeometry.framework */; };
-		534D29A724A0853900B8D86B /* KSGeometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29A624A0853900B8D86B /* KSGeometryTests.swift */; };
+		534D29A724A0853900B8D86B /* PointTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29A624A0853900B8D86B /* PointTestCase.swift */; };
 		534D29A924A0853900B8D86B /* KSGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 534D299B24A0853900B8D86B /* KSGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		534D29BF24A085A800B8D86B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29BE24A085A800B8D86B /* Point.swift */; };
+		534D29C124A087C800B8D86B /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29C024A087C800B8D86B /* Rect.swift */; };
+		534D29C324A0887A00B8D86B /* RectTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29C224A0887A00B8D86B /* RectTestCase.swift */; };
+		534D29C524A08F4400B8D86B /* SizeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29C424A08F4400B8D86B /* SizeTestCase.swift */; };
+		534D29C724A08F9500B8D86B /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29C624A08F9500B8D86B /* Size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +32,13 @@
 		534D299B24A0853900B8D86B /* KSGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSGeometry.h; sourceTree = "<group>"; };
 		534D299C24A0853900B8D86B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		534D29A124A0853900B8D86B /* KSGeometryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KSGeometryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		534D29A624A0853900B8D86B /* KSGeometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSGeometryTests.swift; sourceTree = "<group>"; };
+		534D29A624A0853900B8D86B /* PointTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTestCase.swift; sourceTree = "<group>"; };
 		534D29A824A0853900B8D86B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		534D29BE24A085A800B8D86B /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		534D29C024A087C800B8D86B /* Rect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
+		534D29C224A0887A00B8D86B /* RectTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectTestCase.swift; sourceTree = "<group>"; };
+		534D29C424A08F4400B8D86B /* SizeTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeTestCase.swift; sourceTree = "<group>"; };
+		534D29C624A08F9500B8D86B /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,7 @@
 		534D299A24A0853900B8D86B /* KSGeometry */ = {
 			isa = PBXGroup;
 			children = (
+				534D29BD24A0855B00B8D86B /* source */,
 				534D299B24A0853900B8D86B /* KSGeometry.h */,
 				534D299C24A0853900B8D86B /* Info.plist */,
 			);
@@ -80,10 +91,22 @@
 		534D29A524A0853900B8D86B /* KSGeometryTests */ = {
 			isa = PBXGroup;
 			children = (
-				534D29A624A0853900B8D86B /* KSGeometryTests.swift */,
+				534D29A624A0853900B8D86B /* PointTestCase.swift */,
+				534D29C224A0887A00B8D86B /* RectTestCase.swift */,
 				534D29A824A0853900B8D86B /* Info.plist */,
+				534D29C424A08F4400B8D86B /* SizeTestCase.swift */,
 			);
 			path = KSGeometryTests;
+			sourceTree = "<group>";
+		};
+		534D29BD24A0855B00B8D86B /* source */ = {
+			isa = PBXGroup;
+			children = (
+				534D29BE24A085A800B8D86B /* Point.swift */,
+				534D29C024A087C800B8D86B /* Rect.swift */,
+				534D29C624A08F9500B8D86B /* Size.swift */,
+			);
+			path = source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +171,7 @@
 				TargetAttributes = {
 					534D299724A0853900B8D86B = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					534D29A024A0853900B8D86B = {
 						CreatedOnToolsVersion = 11.5;
@@ -195,6 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534D29BF24A085A800B8D86B /* Point.swift in Sources */,
+				534D29C724A08F9500B8D86B /* Size.swift in Sources */,
+				534D29C124A087C800B8D86B /* Rect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +229,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				534D29A724A0853900B8D86B /* KSGeometryTests.swift in Sources */,
+				534D29A724A0853900B8D86B /* PointTestCase.swift in Sources */,
+				534D29C524A08F4400B8D86B /* SizeTestCase.swift in Sources */,
+				534D29C324A0887A00B8D86B /* RectTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +369,7 @@
 		534D29AD24A0853900B8D86B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = NB5Q9333BS;
@@ -356,6 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.keith27staines.KSGeometry;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +395,7 @@
 		534D29AE24A0853900B8D86B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = NB5Q9333BS;
@@ -388,6 +420,7 @@
 		534D29B024A0853900B8D86B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NB5Q9333BS;
 				INFOPLIST_FILE = KSGeometryTests/Info.plist;
@@ -406,6 +439,7 @@
 		534D29B124A0853900B8D86B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NB5Q9333BS;
 				INFOPLIST_FILE = KSGeometryTests/Info.plist;
