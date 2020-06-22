@@ -1,5 +1,5 @@
 
-public struct Rect {
+public struct Rect: Hashable, Equatable {
     
     public enum Corner {
         case bottomLeft
@@ -7,14 +7,21 @@ public struct Rect {
         case bottomRight
         case topRight
     }
+    public static var zero = Rect(origin: .zero, size: .zero)
     
     public var origin: Point
     public var size: Size
     public var minX: Float { origin.x }
     public var maxX: Float { origin.x + size.width }
+    public var midX: Float { (minX + maxX) / 2.0 }
+    public var midY: Float { (minY + maxY) / 2.0 }
     public var minY: Float { origin.y }
     public var maxY: Float { origin.y + size.height }
-    public var center: Point { Point(x:(minX + maxX) / 2.0, y:(minY+maxY) / 2.0 ) }
+    public var center: Point { Point(x: midX, y: midY) }
+    public var midXPoint: Point { return Point(x: midX, y: minY) }
+    public var midYPoint: Point { return Point(x: minX, y: midY) }
+    public var maxXPoint: Point { return Point(x: maxX, y: minY) }
+    public var maxYPoint: Point { return Point(x: minX, y: maxY) }
     
     public var distalPoint: Point {
         return Point(x: origin.x + size.width, y: origin.y + size.height)
@@ -35,6 +42,14 @@ public struct Rect {
     
     public func contains(_ rect: Rect) -> Bool {
         return contains(rect.origin) && contains(rect.distalPoint)
+    }
+    
+    public func intersects(_ rect: Rect) -> Bool {
+        if rect.maxX <= minX { return false }
+        if rect.minX >= maxX { return false }
+        if rect.maxY <= minY { return false }
+        if rect.minY >= maxY { return false }
+        return true
     }
 
     public init(origin: Point, width: Float, height: Float) {

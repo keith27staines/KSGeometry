@@ -20,6 +20,11 @@ class RectTestCase: XCTestCase {
         XCTAssertEqual(sut.size, testSize)
     }
     
+    func test_zero() {
+        let sut = Rect.zero
+        XCTAssertEqual(sut, Rect(origin: .zero, size: .zero))
+    }
+    
     func test_min_and_max_coordinates() {
         let sut = makeSUT()
         XCTAssertEqual(sut.minX, testOrigin.x)
@@ -28,7 +33,25 @@ class RectTestCase: XCTestCase {
         XCTAssertEqual(sut.maxY, testOrigin.y + testSize.height)
     }
     
-    func test_midX_and_midY_coordinates() {
+    func test_midX_and_midY() {
+        let sut = makeSUT()
+        XCTAssertEqual(sut.midX, (testOrigin.x + testSize.width / 2.0))
+        XCTAssertEqual(sut.midY, (testOrigin.y + testSize.height / 2.0))
+    }
+    
+    func test_midXPoint_and_midYPoint() {
+        let sut = makeSUT()
+        XCTAssertTrue(sut.midXPoint.isCoincidentWith(Point(x: testOrigin.x+testSize.width/2.0, y: testOrigin.y)))
+        XCTAssertTrue(sut.midYPoint.isCoincidentWith(Point(x: testOrigin.x, y: testOrigin.y+testSize.height/2.0)))
+    }
+    
+    func test_maxXPoint_and_maxYPoint() {
+        let sut = makeSUT()
+        XCTAssertTrue(sut.maxXPoint.isCoincidentWith(Point(x: testOrigin.x+testSize.width, y: testOrigin.y)))
+        XCTAssertTrue(sut.maxYPoint.isCoincidentWith(Point(x: testOrigin.x, y: testOrigin.y+testSize.height)))
+    }
+    
+    func test_center_point() {
         let sut = makeSUT()
         XCTAssertEqual( sut.center.x, (testOrigin.x + testSize.width / 2.0) )
         XCTAssertEqual( sut.center.y, (testOrigin.y + testSize.height / 2.0) )
@@ -88,6 +111,65 @@ class RectTestCase: XCTestCase {
                 )
             )
         )
+    }
+    
+    func test_intersects_itself() {
+        let sut = makeSUT()
+        XCTAssertTrue(sut.intersects(sut))
+    }
+    
+    func test_intersects_rect_displaced_slightly_right() {
+        let sut = makeSUT()
+        let other = Rect(origin: Point(x: testOrigin.x+0.1, y: testOrigin.y), size: testSize)
+        XCTAssertTrue(sut.intersects(other))
+    }
+    
+    func test_intersects_rect_displaced_slightly_left() {
+        let sut = makeSUT()
+        let other = Rect(origin: Point(x: testOrigin.x-0.1, y: testOrigin.y), size: testSize)
+        XCTAssertTrue(sut.intersects(other))
+    }
+    
+    func test_intersects_rect_displaced_slightly_up() {
+        let sut = makeSUT()
+        let other = Rect(origin: Point(x: testOrigin.x, y: testOrigin.y+0.1), size: testSize)
+        XCTAssertTrue(sut.intersects(other))
+    }
+    
+    func test_intersects_rect_displaced_slightly_down() {
+        let sut = makeSUT()
+        let other = Rect(origin: Point(x: testOrigin.x, y: testOrigin.y-0.1), size: testSize)
+        XCTAssertTrue(sut.intersects(other))
+    }
+    
+    func test_intersects_rect_displaced_significantly_right() {
+        let sut = makeSUT()
+        let other = Rect(origin: Point(x: testOrigin.x+100, y: testOrigin.y), size: testSize)
+        XCTAssertFalse(sut.intersects(other))
+    }
+    
+    func test_intersects_rect_displaced_significantly_left() {
+        let sut = makeSUT()
+        let other = Rect(origin: Point(x: testOrigin.x-100, y: testOrigin.y), size: testSize)
+        XCTAssertFalse(sut.intersects(other))
+    }
+    
+    func test_intersects_rect_displaced_significantly_up() {
+        let sut = makeSUT()
+        let other = Rect(origin: Point(x: testOrigin.x, y: testOrigin.y+100), size: testSize)
+        XCTAssertFalse(sut.intersects(other))
+    }
+    
+    func test_intersects_rect_displaced_significantly_down() {
+        let sut = makeSUT()
+        let other = Rect(origin: Point(x: testOrigin.x, y: testOrigin.y-100), size: testSize)
+        XCTAssertFalse(sut.intersects(other))
+    }
+    
+    func test_intersects_rect_at_distal_point() {
+        let sut = makeSUT()
+        let other = Rect(origin: sut.distalPoint, size: .zero)
+        XCTAssertFalse(sut.intersects(other))
     }
     
     func makeSUT() -> Rect {

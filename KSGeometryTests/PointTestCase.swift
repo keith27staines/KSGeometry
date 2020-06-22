@@ -10,6 +10,11 @@ class PointTestCase: XCTestCase {
         XCTAssertEqual(sut.y, 2)
     }
     
+    func test_zero() {
+        let sut = Point.zero
+        XCTAssertEqual(sut, Point(x: 0, y: 0))
+    }
+    
 //    func initialise_with_locatable() {
 //        struct Locatable: XYLocatable {
 //            var x: Float
