@@ -1,4 +1,4 @@
-// Comments for Point
+
 public protocol XYLocatable {
     var x: Float { get }
     var y: Float { get }
