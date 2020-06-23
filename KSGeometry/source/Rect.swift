@@ -62,6 +62,11 @@ public struct Rect: Hashable, Equatable {
         self.size = size
     }
     
+    public init(center: Point, size: Size) {
+        origin = Point(x: center.x - size.width/2.0, y: center.y - size.height/2.0)
+        self.size = size
+    }
+    
     public init(x: Float, y: Float, width: Float, height: Float) {
         self.init(origin: Point(x: x, y: y), size: Size(width: width, height: height))
     }

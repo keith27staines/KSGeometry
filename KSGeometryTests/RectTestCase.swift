@@ -26,6 +26,12 @@ class RectTestCase: XCTestCase {
         XCTAssertEqual(sut.size, testSize)
     }
     
+    func test_initialise_with_center_size() {
+        let sut = Rect(center: Point(x: 0, y: 0), size: Size(width: 2, height: 2))
+        XCTAssertEqual(sut.origin, Point(x: -1, y: -1))
+        XCTAssertEqual(sut.size, Size(width: 2, height: 2))
+    }
+    
     func test_zero() {
         let sut = Rect.zero
         XCTAssertEqual(sut, Rect(origin: .zero, size: .zero))
