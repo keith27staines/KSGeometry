@@ -15,12 +15,11 @@ class PointTestCase: XCTestCase {
         XCTAssertEqual(sut, Point(x: 0, y: 0))
     }
     
-//    func initialise_with_locatable() {
-//        struct Locatable: XYLocatable {
-//            var x: Float
-//            var y: Float
-//        }
-//        
-//    }
+    func test_distance() {
+        let p1 = Point.zero
+        let p2 = Point(x: 3, y: 4)
+        XCTAssertEqual(p1.distance2From(p2), 25)
+        XCTAssertEqual(p1.distance2From(p2), p2.distance2From(p1))
+    }
 
 }
