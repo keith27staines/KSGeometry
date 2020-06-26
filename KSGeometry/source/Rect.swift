@@ -40,8 +40,12 @@ public struct Rect: Hashable, Equatable {
         minX < point.x && minY < point.y && maxX > point.x && maxY > point.y
     }
     
+    public func isOnOrWithinBoundary(_ point: XYLocatable) -> Bool {
+        minX <= point.x && minY <= point.y && maxX >= point.x && maxY >= point.y
+    }
+    
     public func contains(_ rect: Rect) -> Bool {
-        return contains(rect.origin) && contains(rect.distalPoint)
+        return isOnOrWithinBoundary(rect.origin) && isOnOrWithinBoundary(rect.distalPoint)
     }
     
     public func intersects(_ rect: Rect) -> Bool {

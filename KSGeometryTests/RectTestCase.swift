@@ -96,7 +96,7 @@ class RectTestCase: XCTestCase {
     
     func test_contains_rect() {
         let sut = makeSUT()
-        XCTAssertFalse(sut.contains(sut))
+        XCTAssertTrue(sut.contains(sut))
         XCTAssertFalse(
             sut.contains(
                 Rect(
@@ -108,8 +108,8 @@ class RectTestCase: XCTestCase {
         XCTAssertFalse(
             sut.contains(
                 Rect(
-                    origin: Point(x: testOrigin.x, y: testOrigin.y),
-                    size: Size(width: testSize.width-0.1, height: testSize.height-0.1)
+                    origin: Point(x: testOrigin.x-0.1, y: testOrigin.y),
+                    size: Size(width: testSize.width, height: testSize.height)
                 )
             )
         )
