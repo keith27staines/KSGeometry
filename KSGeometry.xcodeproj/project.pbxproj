@@ -15,6 +15,7 @@
 		534D29C324A0887A00B8D86B /* RectTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29C224A0887A00B8D86B /* RectTestCase.swift */; };
 		534D29C524A08F4400B8D86B /* SizeTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29C424A08F4400B8D86B /* SizeTestCase.swift */; };
 		534D29C724A08F9500B8D86B /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534D29C624A08F9500B8D86B /* Size.swift */; };
+		53F12B0E24A71AEB001E02A9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 53F12B0D24A71AEB001E02A9 /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,9 @@
 		534D29C224A0887A00B8D86B /* RectTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectTestCase.swift; sourceTree = "<group>"; };
 		534D29C424A08F4400B8D86B /* SizeTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeTestCase.swift; sourceTree = "<group>"; };
 		534D29C624A08F9500B8D86B /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		53F12B0D24A71AEB001E02A9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		53F12B1124A71B6A001E02A9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		53F12B1524A71B81001E02A9 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,9 @@
 		534D298E24A0853900B8D86B = {
 			isa = PBXGroup;
 			children = (
+				53F12B1524A71B81001E02A9 /* .gitignore */,
+				53F12B1124A71B6A001E02A9 /* README.md */,
+				53F12B0D24A71AEB001E02A9 /* LICENSE */,
 				534D299A24A0853900B8D86B /* KSGeometry */,
 				534D29A524A0853900B8D86B /* KSGeometryTests */,
 				534D299924A0853900B8D86B /* Products */,
@@ -202,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F12B0E24A71AEB001E02A9 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
